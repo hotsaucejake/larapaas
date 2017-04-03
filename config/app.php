@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         \SocialiteProviders\Manager\ServiceProvider::class, // Socialite
+        HttpOz\Roles\RolesServiceProvider::class, // User Roles
 
     ],
 
