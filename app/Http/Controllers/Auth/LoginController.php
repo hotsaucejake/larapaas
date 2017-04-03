@@ -75,11 +75,17 @@ class LoginController extends Controller
             return $authUser;
          }
 
-         return User::create([
+         $deactivatedRole = \HttpOz\Roles\Models\Role::whereSlug('deactivated')->first();
+
+         $newUser = User::create([
             'name' => $user->name,
             'email' => $user->email,
             'azure_id' => $user->id,
          ]);
+
+         $newUser->attachRole($deactivatedRole); // new user is deactivated by default
+
+         return $newUser;
     }
 
 

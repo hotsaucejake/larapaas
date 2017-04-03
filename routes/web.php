@@ -17,7 +17,19 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
+
+Route::get('/home', [
+    'as' => 'home',
+    'middleware' => 'role:super|admin|member',
+    'uses' => 'HomeController@index',
+]);
+
+Route::get('/example', [
+    'as' => 'example',
+    'middleware' => 'role:admin',
+    'uses' => 'HomeController@index',
+]);
 
 Route::get('auth/azure', ['as' => 'auth/azure', 'uses' => 'Auth\LoginController@redirectToProvider']);
 Route::get('auth/azure/callback', ['as' => 'auth/azure/callback', 'uses' => 'Auth\LoginController@handleProviderCallback']);
