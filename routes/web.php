@@ -25,5 +25,11 @@ Route::get('/home', [
     'uses' => 'HomeController@index',
 ]);
 
+Route::get('/blank', [
+    'as' => 'blank',
+    'middleware' => 'role:super',
+    'uses' => 'BlankController@index',
+]);
+
 Route::get('auth/azure', ['as' => 'auth/azure', 'uses' => 'Auth\LoginController@redirectToProvider']);
 Route::get('auth/azure/callback', ['as' => 'auth/azure/callback', 'uses' => 'Auth\LoginController@handleProviderCallback']);
