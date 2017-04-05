@@ -66,21 +66,36 @@
 
               <div class="content">
 
-                  <!-- BEGIN LOGIN FORM -->
-                  <form name="loginform" class="login-form">
-                      <div class="form-actions">
+
                         @if (Route::has('login'))
                            @if (Auth::check())
-                              <a class="btn red btn-block btn-lg uppercase" href="{{ url('/home') }}">Dashboard</a>
+                           <!-- BEGIN LOGIN FORM -->
+                           <form name="loginform" class="login-form">
+                               <div class="form-actions">
+                                    <a class="btn blue-steel btn-block btn-lg uppercase" href="{{ url('/home') }}">Dashboard</a>
+                               </div>
+                           </form>
+                           <!-- END LOGIN FORM -->
+
+                           <!-- LOGOUT FORM -->
+                           <a href="{{ route('logout') }}" class="btn red-mint btn-block btn-lg uppercase"
+                              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+
                            @else
-                              <a class="btn red btn-block btn-lg uppercase" href="{{ url('auth/azure') }}">Login</a>
+                           <!-- BEGIN LOGIN FORM -->
+                           <form name="loginform" class="login-form">
+                               <div class="form-actions">
+                                  <a class="btn blue-steel btn-block btn-lg uppercase" href="{{ url('auth/azure') }}">Login</a>
+                               </div>
+                           </form>
                            @endif
                         @endif
 
 
-                      </div>
-                  </form>
-                  <!-- END LOGIN FORM -->
+
               </div>
            </div>
            </div>

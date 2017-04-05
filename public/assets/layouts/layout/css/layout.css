@@ -67,7 +67,7 @@ Page Header
       display: inline-block;
       float: left; }
     .page-header.navbar .page-logo .logo-default {
-      margin: 18px 0 0 0; }
+      margin: 6px 0 0 0; }
     .page-header.navbar .page-logo .logo-mini {
       display: none;
       margin-left: 5px; }
@@ -428,8 +428,8 @@ Page Header
       .page-header.navbar .search-form.search-form-expanded .input-group .input-group-btn .btn.submit {
         margin-left: 0; } }
 
-/*** 
-Horizontal Menu 
+/***
+Horizontal Menu
 ***/
 .page-header.navbar {
   /* Header container */
@@ -2537,8 +2537,8 @@ Page Quick Sidebar
     top: 120px;
     margin-top: 0; } }
 
-/***  
-Page Loading       
+/***
+Page Loading
 ***/
 .page-on-load {
   background: #fefefe; }
